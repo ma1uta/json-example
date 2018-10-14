@@ -29,12 +29,12 @@ public class AbstractTest {
         assertNotNull(event);
         assertTrue(event instanceof Sevent);
 
-        Sevent fevent = (Sevent) event;
+        Sevent sevent = (Sevent) event;
 
-        assertEquals("static", fevent.getStateKey());
-        assertEquals("s", fevent.getType());
+        assertEquals("static", sevent.getStateKey());
+        assertEquals("s", sevent.getType());
 
-        SecondContent content = fevent.getContent();
+        SecondContent content = sevent.getContent();
 
         assertNotNull(content);
         assertEquals(10L, content.getTs().longValue());
