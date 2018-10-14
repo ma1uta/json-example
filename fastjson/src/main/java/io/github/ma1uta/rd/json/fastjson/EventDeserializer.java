@@ -1,4 +1,4 @@
-package io.github.ma1uta.rd.json.gson;
+package io.github.ma1uta.rd.json.fastjson;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.parser.DefaultJSONParser;

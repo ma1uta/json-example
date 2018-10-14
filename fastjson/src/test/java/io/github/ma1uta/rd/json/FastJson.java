@@ -2,7 +2,7 @@ package io.github.ma1uta.rd.json;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.parser.ParserConfig;
-import io.github.ma1uta.rd.json.gson.EventDeserializer;
+import io.github.ma1uta.rd.json.fastjson.EventDeserializer;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
