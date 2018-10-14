@@ -14,6 +14,7 @@
         <module>dsljson</module>
         <module>jackson</module>
         <module>gson</module>
+        <module>jsoniter</module>
     </modules>
 
     <properties>
@@ -29,6 +30,7 @@
         <javax.json.bind.api.version>1.0</javax.json.bind.api.version>
         <jackson.version>2.9.7</jackson.version>
         <gson.version>2.8.5</gson.version>
+        <jsoniter.version>0.9.23</jsoniter.version>
     </properties>
 
     <build>
@@ -37,6 +39,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
@@ -104,6 +110,13 @@
                 <groupId>com.google.code.gson</groupId>
                 <artifactId>gson</artifactId>
                 <version>${gson.version}</version>
+            </dependency>
+
+            <!-- jsoniter -->
+            <dependency>
+                <groupId>com.jsoniter</groupId>
+                <artifactId>jsoniter</artifactId>
+                <version>${jsoniter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
