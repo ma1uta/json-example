@@ -13,9 +13,9 @@ public class Sevent extends Event<SecondContent> {
     @JsonbProperty("state_key")
     @JsonProperty("state_key")
     @SerializedName("state_key")
-    @JsonAttribute(name = "state_key")
     private String stateKey;
 
+    @JsonAttribute(name = "state_key")
     public String getStateKey() {
         return stateKey;
     }

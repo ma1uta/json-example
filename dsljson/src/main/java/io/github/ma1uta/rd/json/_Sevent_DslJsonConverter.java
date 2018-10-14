@@ -52,8 +52,8 @@ public class _Sevent_DslJsonConverter implements Configuration {
             return bind(reader, new Sevent());
         }
 
-        private static final byte[] quoted_stateKey = "\"stateKey\":".getBytes(utf8);
-        private static final byte[] name_stateKey = "stateKey".getBytes(utf8);
+        private static final byte[] quoted_stateKey = "\"state_key\":".getBytes(utf8);
+        private static final byte[] name_stateKey = "state_key".getBytes(utf8);
         private static final byte[] quoted_content = ",\"content\":".getBytes(utf8);
         private static final byte[] name_content = "content".getBytes(utf8);
 
@@ -130,7 +130,7 @@ public class _Sevent_DslJsonConverter implements Configuration {
             if (reader.last() == '}') {
                 return;
             }
-            if (reader.fillNameWeakHash() != 842 || !reader.wasLastName(name_stateKey)) {
+            if (reader.fillNameWeakHash() != 969 || !reader.wasLastName(name_stateKey)) {
                 bindSlow(reader, instance, 0);
                 return;
             }

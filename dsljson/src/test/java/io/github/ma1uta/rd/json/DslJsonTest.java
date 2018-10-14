@@ -12,11 +12,15 @@ import javax.json.bind.JsonbBuilder;
 
 public class DslJsonTest extends AbstractTest {
 
+    public static final String ORIGIN_F2 = "{\"type\":\"f\",\"content\":{\"field\":\"data\"},\"room_id\":\"123\"}";
+
+    public static final String ORIGIN_S2 = "{\"type\":\"s\",\"state_key\":\"static\",\"content\":{\"ts\":10}}";
+
     @Test
     public void dsljsonF() throws IOException {
         DslJson<Object> dslJson = new DslJson<>(Settings.withRuntime().includeServiceLoader());
 
-        Event event = dslJson.deserialize(Event.class, new ByteArrayInputStream(ORIGIN_F.getBytes(StandardCharsets.UTF_8)));
+        Event event = dslJson.deserialize(Event.class, new ByteArrayInputStream(ORIGIN_F2.getBytes(StandardCharsets.UTF_8)));
 
         validateF(event);
     }
@@ -25,7 +29,7 @@ public class DslJsonTest extends AbstractTest {
     public void dsljsonS() throws IOException {
         DslJson<Object> dslJson = new DslJson<>();
 
-        Event event = dslJson.deserialize(Event.class, new ByteArrayInputStream(ORIGIN_S.getBytes(StandardCharsets.UTF_8)));
+        Event event = dslJson.deserialize(Event.class, new ByteArrayInputStream(ORIGIN_S2.getBytes(StandardCharsets.UTF_8)));
 
         validateS(event);
     }
@@ -34,7 +38,7 @@ public class DslJsonTest extends AbstractTest {
     public void jsonbF() {
         Jsonb jsonb = JsonbBuilder.create();
 
-        Event event = jsonb.fromJson(ORIGIN_F, Event.class);
+        Event event = jsonb.fromJson(ORIGIN_F2, Event.class);
 
         validateF(event);
     }
@@ -43,7 +47,7 @@ public class DslJsonTest extends AbstractTest {
     public void jsonbS() {
         Jsonb jsonb = JsonbBuilder.create();
 
-        Event event = jsonb.fromJson(ORIGIN_S, Event.class);
+        Event event = jsonb.fromJson(ORIGIN_S2, Event.class);
 
         validateS(event);
     }
