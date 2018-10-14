@@ -1,5 +1,7 @@
 package io.github.ma1uta.rd.json;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 //@CompiledJson
 public abstract class Event<C extends EventContent> {
 
@@ -11,6 +13,7 @@ public abstract class Event<C extends EventContent> {
 
     private C content;
 
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     public abstract String getType();
 
     public C getContent() {

@@ -1,6 +1,7 @@
 package io.github.ma1uta.rd.json;
 
 import com.dslplatform.json.CompiledJson;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.json.bind.annotation.JsonbProperty;
 
@@ -8,6 +9,7 @@ import javax.json.bind.annotation.JsonbProperty;
 public class Sevent extends Event<SecondContent> {
 
     @JsonbProperty("state_key")
+    @JsonProperty("state_key")
     private String stateKey;
 
     public String getStateKey() {
