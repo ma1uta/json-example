@@ -2,6 +2,7 @@ package io.github.ma1uta.rd.json;
 
 import com.dslplatform.json.CompiledJson;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 
 import javax.json.bind.annotation.JsonbProperty;
 
@@ -10,6 +11,7 @@ public class Fevent extends Event<FirstContent> {
 
     @JsonbProperty("room_id")
     @JsonProperty("room_id")
+    @SerializedName("room_id")
     private String roomId;
 
     public String getRoomId() {
