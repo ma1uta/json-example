@@ -13,9 +13,9 @@ public class Fevent extends Event<FirstContent> {
     @JsonbProperty("room_id")
     @JsonProperty("room_id")
     @SerializedName("room_id")
-    @JsonAttribute(name = "room_id")
     private String roomId;
 
+    @JsonAttribute(name = "room_id")
     public String getRoomId() {
         return roomId;
     }

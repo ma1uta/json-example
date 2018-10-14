@@ -1,8 +1,7 @@
-package io.github.ma1uta.rd.json.dsljson;
+package io.github.ma1uta.rd.json;
 
 import com.dslplatform.json.DslJson;
-import io.github.ma1uta.rd.json.AbstractTest;
-import io.github.ma1uta.rd.json.Event;
+import com.dslplatform.json.runtime.Settings;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
@@ -15,7 +14,7 @@ public class DslJsonTest extends AbstractTest {
 
     @Test
     public void dsljsonF() throws IOException {
-        DslJson<Object> dslJson = new DslJson<>();
+        DslJson<Object> dslJson = new DslJson<>(Settings.withRuntime().includeServiceLoader());
 
         Event event = dslJson.deserialize(Event.class, new ByteArrayInputStream(ORIGIN_F.getBytes(StandardCharsets.UTF_8)));
 
